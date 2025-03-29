@@ -35,3 +35,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 # next-portfolio
+
+## Roadmap
+- [ ] Add links from skill page to project page, and vice versa.
+- [ ] Fix Skill type and mdx content.

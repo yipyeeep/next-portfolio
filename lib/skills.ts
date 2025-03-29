@@ -2,14 +2,14 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const rootDirectory = path.join(process.cwd(), 'content', 'posts')
+const rootDirectory = path.join(process.cwd(), 'content', 'skills')
 
-export type Post = {
-  metadata: PostMetadata
+export type Skill = {
+  metadata: SkillMetadata
   content: string
 }
 
-export type PostMetadata = {
+export type SkillMetadata = {
   title?: string
   summary?: string
   image?: string
@@ -18,7 +18,7 @@ export type PostMetadata = {
   slug: string
 }
 
-export async function getPostBySlug(slug: string): Promise<Post | null> {
+export async function getSkillBySlug(slug: string): Promise<Skill | null> {
   try {
     const filePath = path.join(rootDirectory, `${slug}.mdx`)
     const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })
@@ -29,11 +29,11 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   }
 }
 
-export async function getPosts(limit?: number): Promise<PostMetadata[]> {
+export async function getSkills(limit?: number): Promise<SkillMetadata[]> {
   const files = fs.readdirSync(rootDirectory)
 
-  const posts = files
-    .map(file => getPostMetadata(file))
+  const skills = files
+    .map(file => getSkillMetadata(file))
     .sort((a, b) => {
       if (new Date(a.publishedAt ?? '') < new Date(b.publishedAt ?? '')) {
         return 1
@@ -43,13 +43,13 @@ export async function getPosts(limit?: number): Promise<PostMetadata[]> {
     })
 
   if (limit) {
-    return posts.slice(0, limit)
+    return skills.slice(0, limit)
   }
 
-  return posts
+  return skills
 }
 
-export function getPostMetadata(filepath: string): PostMetadata {
+export function getSkillMetadata(filepath: string): SkillMetadata {
   const slug = filepath.replace(/\.mdx$/, '')
   const filePath = path.join(rootDirectory, filepath)
   const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' })

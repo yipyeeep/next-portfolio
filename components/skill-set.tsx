@@ -1,21 +1,21 @@
 import Link from 'next/link'
-import { getPosts } from '@/lib/posts'
-import Posts from '@/components/posts'
+import { getSkills } from '@/lib/skills'
+import Skills from '@/components/skills'
 
-export default async function RecentPosts() {
-  const posts = await getPosts(4)
+export default async function SkillSet() {
+  const skills = await getSkills(4)
 
   return (
     <section className='pb-24'>
       <div>
-        <h2 className='title mb-12'>Recent posts</h2>
-        <Posts posts={posts} />
+        <h2 className='title mb-12'>Skill set</h2>
+        <Skills skills={skills} />
 
         <Link
-          href='/posts'
+          href='/skills'
           className='mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
         >
-          <span>All posts</span>
+          <span>Read more</span>
         </Link>
       </div>
     </section>

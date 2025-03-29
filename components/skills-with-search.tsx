@@ -1,17 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import { PostMetadata } from '@/lib/posts'
+import { SkillMetadata } from '@/lib/skills'
 
-import Posts from '@/components/posts'
+import Skills from '@/components/skills'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { Cross2Icon } from '@radix-ui/react-icons'
 
-export default function PostsWithSearch({ posts }: { posts: PostMetadata[] }) {
+export default function SkillsWithSearch({ skills }: { skills: SkillMetadata[] }) {
   const [query, setQuery] = useState('')
-  const filtered = posts.filter(post =>
-    post.title?.toLowerCase().includes(query.toLowerCase())
+  const filtered = skills.filter(skill =>
+    skill.title?.toLowerCase().includes(query.toLowerCase())
   )
 
   const isFiltered = query.length > 0
@@ -24,7 +24,7 @@ export default function PostsWithSearch({ posts }: { posts: PostMetadata[] }) {
       <div className='mb-12 flex items-center gap-3'>
         <Input
           type='text'
-          placeholder='Search posts...'
+          placeholder='Search skills...'
           className='h-9 w-full sm:w-1/2'
           value={query}
           onChange={e => setQuery(e.target.value)}
@@ -42,7 +42,7 @@ export default function PostsWithSearch({ posts }: { posts: PostMetadata[] }) {
         )}
       </div>
 
-      <Posts posts={filtered} />
+      <Skills skills={filtered} />
     </div>
   )
 }

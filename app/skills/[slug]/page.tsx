@@ -3,38 +3,38 @@ import Image from 'next/image'
 
 import { formatDate } from '@/lib/utils'
 import MDXContent from '@/components/mdx-content'
-import { getPosts, getPostBySlug } from '@/lib/posts'
+import { getSkills, getSkillBySlug } from '@/lib/skills'
 import { ArrowLeftIcon } from '@radix-ui/react-icons'
 import { notFound } from 'next/navigation'
 import NewsletterForm from '@/components/newsletter-form'
 
 export async function generateStaticParams() {
-  const posts = await getPosts()
-  const slugs = posts.map(post => ({ slug: post.slug }))
+  const skills = await getSkills()
+  const slugs = skills.map(skill => ({ slug: skill.slug }))
 
   return slugs
 }
 
-export default async function Post({ params }: { params: { slug: string } }) {
+export default async function Skill({ params }: { params: { slug: string } }) {
   const { slug } = params
-  const post = await getPostBySlug(slug)
+  const skill = await getSkillBySlug(slug)
 
-  if (!post) {
+  if (!skill) {
     notFound()
   }
 
-  const { metadata, content } = post
+  const { metadata, content } = skill
   const { title, image, author, publishedAt } = metadata
 
   return (
     <section className='pb-24 pt-32'>
       <div className='container max-w-3xl'>
         <Link
-          href='/posts'
+          href='/skills'
           className='mb-8 inline-flex items-center gap-2 text-sm font-light text-muted-foreground transition-colors hover:text-foreground'
         >
           <ArrowLeftIcon className='h-5 w-5' />
-          <span>Back to posts</span>
+          <span>Back to skills</span>
         </Link>
 
         {image && (

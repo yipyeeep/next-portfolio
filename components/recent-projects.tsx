@@ -15,7 +15,7 @@ export default async function RecentProjects() {
           href='/projects'
           className='mt-8 inline-flex items-center gap-2 text-muted-foreground underline decoration-1 underline-offset-2 transition-colors hover:text-foreground'
         >
-          <span>All projects</span>
+          <span>Read more</span>
         </Link>
       </div>
     </section>

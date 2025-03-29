@@ -27,7 +27,7 @@ export default async function Project({
   }
 
   const { metadata, content } = project
-  const { title, image, author, publishedAt } = metadata
+  const { title, url, image, author, publishedAt } = metadata
 
   return (
     <section className='pb-24 pt-32'>
@@ -51,14 +51,16 @@ export default async function Project({
           </div>
         )}
 
-        <header>
+        <header className='mb-4'>
           <h1 className='title'>{title}</h1>
           <p className='mt-3 text-xs text-muted-foreground'>
             {author} / {formatDate(publishedAt ?? '')}
           </p>
         </header>
+        <hr />
+        <div className='prose mt-2 text-2xl dark:prose-invert'>Demo: <a className='text-blue-500' href={url}>Link</a></div>
 
-        <main className='prose mt-16 dark:prose-invert'>
+        <main className='prose mt-16 dark:prose-invert text-size-500'>
           <MDXContent source={content} />
         </main>
       </div>

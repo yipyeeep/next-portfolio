@@ -7,52 +7,100 @@
   publishedAt: '2025-03-18'
 ---
 
-## Introduction
+## 📌 Overview  
 
-This is a Bit.ly inspired web abb that allows users to create sharable links.
-This project is created using Deno and TypeScript with no third party dependencies.
+A minimalist, dependency-free URL shortener built with:  
+✔ **100% Deno** (no Node.js/npm)  
+✔ **Pure TypeScript** (strict mode)  
+✔ **Web Platform APIs** (no frameworks)  
 
-## Features
+Developed as part of [Fireship's Deno Course](https://fireship.io/courses/deno/) between **March 2-13, 2025**  
 
-- **MDX Support**: Write content in MDX format.
-- **Syntax Highlighting**: Code blocks are syntax highlighted.
-- **Custom Components**: Use custom components in your MDX files.
-- **Responsive Design**: The website is responsive and works on all devices.
+---
 
-## Technologies
+## ✨ Features  
 
-- **Deno**: A React framework for building static and dynamic websites.
-- **TypeScript**: A file format that allows you to write JSX in your Markdown files.
-- **React**: A utility-first CSS framework for building custom designs.
-- **deployctl**: A cloud platform for static sites and serverless functions.
+- **Zero Dependencies**  
+  Uses only Deno's built-in modules  
+- **Realtime Link Creation**  
+  Generate short URLs instantly  
+- **Deno KV Storage**  
+  Built-in key-value database  
+- **TypeScript Patterns**  
+  Generics, discriminated unions, and strict typing  
 
-## Getting Started
+---
 
-To get started with this project, you can clone the repository and install the
-dependencies:
+## 🛠️ Tech Stack  
 
-```bash
-git clone
-cd next-mdx-portfolio
-npm install
+| Component      | Technology              |
+|----------------|-------------------------|
+| Backend        | Deno HTTP Server        |
+| Database       | Deno KV (built-in)      |
+| Frontend       | DOM APIs + CSS          |
+| Deployment     | Deno Deploy             |
+
+---
+
+## ⚡ Quick Start  
+
+1. **Install Deno**:  
+   ```sh
+   curl -fsSL https://deno.land/x/install/install.sh | sh
+   ```
+
+2. **Run Locally**:  
+   ```sh
+   deno run --allow-net --allow-read --allow-write src/main.ts
+   ```
+
+3. **Access App**:  
+   Visit `http://localhost:8000`  
+
+---
+
+## 📂 Project Structure  
+
+```
+deno-short-link/
+├── src/
+│   ├── main.ts        # Server entry point
+│   ├── types/         # TypeScript interfaces
+│   ├── utils/         # Shortening logic
+│   └── static/        # Frontend assets
+├── README.md          # This file
+└── deno.json          # Deno config
 ```
 
-Once the dependencies are installed, you can run the development server:
+---
 
-```bash
-npm run dev
-```
+## 📚 Development Notes  
 
-The development server will start at `http://localhost:3000`.
+**Why No Dependencies?**  
+- Master core Web Platform APIs  
+- Understand Deno's built-in capabilities  
+- Avoid dependency bloat  
 
-## Deployment
+**Key Learnings**:  
+✔ Deno's native HTTP server  
+✔ TypeScript advanced patterns  
+✔ Deno KV for persistence  
 
-To deploy this project, you can use Vercel. You can link your GitHub repository
-to Vercel and deploy the project with a single click.
+---
+
+## 📜 License  
+
+MIT © 2025 - [yipyeeep](https://github.com/yipyeeep)  
+
+---
+
+*"No npm, no problem."* 🦕💨
+
+
 
 ## Conclusion
 
-This portfolio website is a great example of how you can use NextJs and MDX to
-build a modern website with dynamic content. By combining the power of NextJs
-and MDX, you can create interactive and engaging websites that are easy to
-maintain and update.
+This link shortener website is a great way to learn more about http server 
+routing, realtime stream listener, as well as basic user authentication.
+By using Deno for both frontend and backend, you can focus solely on 
+mastering essential tools such as typescript and web platform APIs.

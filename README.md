@@ -37,8 +37,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # next-portfolio
 
 ## Roadmap
-- [ ] Change mdx content
-- [ ] Deploy to yipyeeep.com
-- [ ] Add hyperlink to projects
-- [ ] Add links from skill page to project page, and vice versa
-- [ ] Add a horizontal scrolling menu to showcase skill set
+- [ Change mdx content ]
+- [ Add hyperlink to projects ]
+- [ Add links from skill page to project page, and vice versa ]
+- [ Add a horizontal scrolling menu to showcase tech stack ]

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { ThemeToggle } from './theme-toggle'
+import Image from 'next/image'
 
 export default function Header() {
   return (
@@ -7,7 +8,13 @@ export default function Header() {
       <nav className='container flex max-w-3xl items-center justify-between'>
         <div>
           <Link href='/' className='font-serif text-2xl font-bold'>
-            YIP
+            <Image
+              className="cursor:pointer hover:opacity-75"
+              src="/images/logo-dark.png" // Route of the image file
+              width={140}
+              height={70}
+              alt="NextSpace Logo"
+            />
           </Link>
         </div>
 

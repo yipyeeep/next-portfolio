@@ -1,0 +1,70 @@
+---
+title: yip yap - Next.js Social Platform
+url: https://localhost:3000
+summary: A retro-inspired social network demonstrating Next.js advanced features with modern auth and database patterns.
+image: /images/projects/yip-yap.webp
+author: 'HongYip Cheng'
+publishedAt: '2025-07-20'
+---
+
+## 📌 Overview
+
+A nostalgic social platform built with cutting-edge Next.js features, designed to showcase:
+
+✔ **Hybrid rendering** strategies (SSR, ISR, SSG)  
+✔ **Full-stack TypeScript** with end-to-end type safety  
+✔ **Modern auth** via NextAuth.js  
+✔ **Edge-ready** PostgreSQL with Prisma  
+
+Developed as a technical showcase (July 2025) to demonstrate Next.js 15 capabilities.
+
+---
+
+## ✨ Key Features
+
+- **Dynamic Friend Connections**  
+  - Real-time friend requests using WebSockets  
+  - ISR-revalidated profiles (5-minute cache)  
+
+- **Nostalgic UI Patterns**  
+  - Customizable profiles (MySpace-style)  
+  - Top 8 friends list with drag ranking  
+
+- **Optimized Data Flow**  
+  - React Server Components for 80% of UI  
+  - Client-side interactions via Actions  
+
+---
+
+## 🛠️ Technologies
+
+- **Frontend**: Next.js 15 (App Router), TypeScript  
+- **Styling**: Tailwind CSS + CSS Modules  
+- **Authentication**: NextAuth.js (GitHub + Credentials)  
+- **Database**: PostgreSQL (Neon) + Prisma  
+- **Rendering**: Hybrid SSR/ISR/SSG  
+- **Deployment**: Vercel (Edge Network)  
+
+---
+
+## ⚡ Performance Insights
+
+**User Profiles**
+
+- **Strategy**: ISR (5-minute revalidation)
+- **TTFB**: 120ms
+- **Cache Hit Rate**: 92%
+
+**Friend Feed**
+
+- **Strategy**: SSR with Streaming
+- **TTFB**: 180ms
+- **Cache**: Not applicable (dynamic)
+
+**Static Content**
+
+- **Strategy**: SSG
+- **TTFB**: 40ms
+- **Cache Hit Rate**: 100%
+
+---

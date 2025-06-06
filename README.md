@@ -41,3 +41,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 - [ Add hyperlink to projects ]
 - [ Add links from skill page to project page, and vice versa ]
 - [ Add a horizontal scrolling menu to showcase tech stack ]
+- [ restructure mdx content for skills ]

@@ -1,57 +1,106 @@
 ---
-  title: Supabase Message Board
-  summary: A full-stack ecommerce store built with NextJs and Stripe.
-  image: /images/projects/message-board.webp
-  author: 'Hamed Bahram'
-  publishedAt: '2024-08-04'
+title: Supabase Message Board  
+url: https://messageyip.netlify.app  
+summary: A full-stack React message board with realtime updates, authentication, and row-level security.  
+image: /images/projects/supabase-message-board.webp  
+author: 'HongYip Cheng'  
+publishedAt: '2025-05-20'  
 ---
 
-This is a full-stack ecommerce store built with NextJs and Stripe. It uses the
-`@stripe/stripe-js` package to handle payments and the `@next/bundle-analyzer`
-package to analyze the bundle size.
+## 📌 Overview  
 
-## Features
+A modern message board built with:  
+✔ **React + TypeScript** (strict typing)  
+✔ **Supabase** (Auth + PostgreSQL)  
+✔ **Row-Level Security** (RLS) for data safety  
 
-- **Stripe Payments**: Accept payments using the Stripe API.
-- **Product Catalog**: Display products in a grid layout.
-- **Shopping Cart**: Add products to the shopping cart and checkout.
-- **User Authentication**: Allow users to sign up and log in.
-- **Order History**: View order history and track shipments.
+Developed as a **full-stack learning project** between **May 5-20, 2025**  
 
-## Technologies
+---
 
-- **NextJs**: A React framework for building static and dynamic websites.
-- **Stripe**: A payment processing platform for online businesses.
-- **Tailwind CSS**: A utility-first CSS framework for building custom designs.
-- **Vercel**: A cloud platform for static sites and serverless functions.
+## ✨ Features  
 
-## Getting Started
+- **Realtime Messages**  
+  Fetch and display posts with Supabase subscriptions  
+- **Secure Auth**  
+  Google/GitHub login + custom React hook for session management  
+- **Fine-Grained Permissions**  
+  PostgreSQL RLS policies control CRUD operations  
+- **End-to-End Testing**  
+  Playwright tests for critical user flows  
 
-To get started with this project, you can clone the repository and install the
-dependencies:
+---
 
-```bash
-git clone
-cd ecommerce-store
-npm install
+## 🛠️ Tech Stack  
+
+- **React 18**: A JavaScript library for building interactive UIs with hooks.
+- **TypeScript**: Strongly typed JavaScript for scalable frontend code.
+- **Supabase**: Open-source Firebase alternative with PostgreSQL and Auth.
+- **PostgreSQL RLS**: Row-level security for granular database permissions.
+- **React Router v6**: Client-side routing for single-page applications.
+- **Playwright**: End-to-end testing for reliable user flows.
+- **Netlify**: Cloud platform for deploying static and serverless sites.
+- **Docker**: Containerization for local Supabase development.
+
+---
+
+## ⚡ Quick Start  
+
+1. **Set Up Supabase**:  
+   ```sh
+   supabase init  
+   supabase start  
+   ```
+
+2. **Run Frontend**:  
+   ```sh
+   npm install  
+   npm run dev  
+   ```
+
+3. **Run Tests**:  
+   ```sh
+   npx playwright test  
+   ```
+
+4. **Access App**:  
+   Visit `http://localhost:3000`  
+
+---
+
+## 📂 Project Structure  
+
+```
+supabase-message-board/  
+├── src/  
+│   ├── hooks/              # Custom hooks (e.g., `useSession`)  
+│   ├── components/         # UI (PostList, AuthButtons)  
+│   ├── contexts/           # React context providers  
+│   ├── types/              # TypeScript interfaces  
+│   └── utils/              # Supabase client config  
+├── tests/                  # Playwright E2E tests  
+├── supabase/               # Local DB migrations + RLS policies  
+├── Dockerfile              # Supabase CLI config  
+└── README.md  
 ```
 
-Once the dependencies are installed, you can run the development server:
+---
 
-```bash
-npm run dev
-```
+## 📚 Development Notes  
 
-The development server will start at `http://localhost:3000`.
+**Why Supabase?**  
+- Replaced Firebase with open-source alternative  
+- PostgreSQL’s RLS enabled secure direct DB access  
+- Built-in Auth saved 100+ lines of custom code  
 
-## Deployment
+**Key Learnings**:  
+✔ Writing RLS policies for multi-tenant data  
+✔ Creating custom React hooks for Supabase Auth  
+✔ Testing authenticated flows with Playwright  
 
-To deploy this project, you can use Vercel. You can link your GitHub repository
-to Vercel and deploy the project with a single click.
+## Conclusion  
 
-## Conclusion
-
-This ecommerce store is a great example of how you can build a full-stack
-application with NextJs and Stripe. By integrating the Stripe API with NextJs,
-you can create a seamless shopping experience for your customers and manage
-payments securely and efficiently.
+This project demonstrates how to build a **scalable, secure** full-stack app with:  
+- **Minimal boilerplate** (leveraging Supabase’s APIs)  
+- **Type safety** across frontend and database  
+- **Production-ready practices** (E2E tests, RLS)  

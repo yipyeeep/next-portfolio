@@ -12,8 +12,9 @@ export default function Home() {
         <SkillSet />
         <RecentProjects />
 
-        <NewsletterForm />
+        
       </div>
     </section>
   )
 }
+//<NewsletterForm /> in line 15
